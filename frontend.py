@@ -15,7 +15,7 @@ def insert(id,title,author,year,isbn):
         conn.commit()
         conn.close()
 
-insert("1",'','ammu',2020,1999)
+insert("1",'shinshan','ammu',2020,1999)
 
 def view():
     conn=sqlite3.connect("book.db")
@@ -43,10 +43,8 @@ def update(title,id):
     conn.commit()
     conn.close()
 
-update('hoana the super girl',5)
-delete(0)
 
-print(view())
+
 
 app=Tk()
 app.title("bookstore")
@@ -67,6 +65,7 @@ txt3= Entry(app,textvariable=text_Input3).grid(row=1,column=1)
 txt4= Entry(app,textvariable=text_Input4).grid(row=1,column=3)
 
 list1=Listbox(app,height=15,width=35).grid(rowspan=7,columnspan=2)
+
 btn1=Button(app,bg="light blue",text='VIEW ALL',width=14,command=view).grid(row=2,column=3)
 btn2=Button(app,bg="light blue",text='SEARCH',width=14,command=view).grid(row=3,column=3)
 btn3=Button(app,bg="light blue",text='ADD ENTRY',width=14,command=insert).grid(row=4,column=3)
@@ -75,5 +74,11 @@ btn5=Button(app,bg="light blue",text='DELETE SELECTED',width=14,command=delete).
 btn6=Button(app,bg="light blue",text='CLOSE',width=14).grid(row=7,column=3)
 
 
+insert("1",'shinshan','ammu',2020,1999)
+
+update('hoana the super girl',5)
+delete(5)
+
+print(view())
 
 app.mainloop()
